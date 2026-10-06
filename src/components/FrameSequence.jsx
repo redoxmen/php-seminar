@@ -27,8 +27,10 @@ import LettersScene from './LettersScene.jsx'
 
 export const FRAME_COUNT = 300
 
+// BASE_URL is "/" locally and "/<repo-name>/" on GitHub Pages, so frame
+// URLs stay correct when the site is served from a subpath.
 export const frameSrc = (i) =>
-  `/assets/php-frames/frame-${String(i + 1).padStart(3, '0')}.webp`
+  `${import.meta.env.BASE_URL}assets/php-frames/frame-${String(i + 1).padStart(3, '0')}.webp`
 
 const FrameSequence = memo(function FrameSequence({
   progressRef,
