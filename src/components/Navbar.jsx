@@ -13,7 +13,6 @@ const LINKS = [
   { id: '/', label: 'Home', external: true },
   { id: 'topics', label: 'Topics' },
   { id: 'how-it-works', label: 'How It Works' },
-  { id: 'team', label: 'Team' },
 ]
 
 export function PhpBadge({ size = 34 }) {
@@ -25,7 +24,7 @@ export function PhpBadge({ size = 34 }) {
   )
 }
 
-export default function Navbar({ onOpenTeam, teamOpen }) {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const reduced = useReducedMotion()
@@ -65,10 +64,6 @@ export default function Navbar({ onOpenTeam, teamOpen }) {
           ))}
         </nav>
 
-        <button type="button" className="btn btn--coral btn--sm nav__team-btn" onClick={onOpenTeam} aria-expanded={teamOpen}>
-          Meet the Team
-        </button>
-
         <button
           type="button"
           className={`nav__burger ${menuOpen ? 'is-open' : ''}`}
@@ -95,13 +90,6 @@ export default function Navbar({ onOpenTeam, teamOpen }) {
                 {l.label}
               </button>
             ))}
-            <button
-              type="button"
-              className="btn btn--coral nav__sheet-team"
-              onClick={() => { setMenuOpen(false); onOpenTeam() }}
-            >
-              Meet the Team
-            </button>
           </motion.nav>
         )}
       </AnimatePresence>

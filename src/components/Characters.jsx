@@ -190,17 +190,6 @@ export function Kid({
   )
 }
 
-/* ---------- head-only avatar (team cards, nav) ---------- */
-
-export function Avatar({ shirt = '#FF6F61', hair = boyHair, className, style }) {
-  return (
-    <svg viewBox="0 0 132 118" className={className} style={style} role="img" aria-label="Cartoon avatar">
-      <rect x="36" y="94" width="60" height="30" rx="16" fill={shirt} />
-      <Head cx={66} cy={52} mood="happy" hair={hair} />
-    </svg>
-  )
-}
-
 /* ---------- named cast ---------- */
 
 export function Boy(props) {

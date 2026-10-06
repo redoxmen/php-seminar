@@ -130,11 +130,7 @@ export default function TopicSection({ lesson, index, total }) {
             <button type="button" className="pn pn--next" onClick={() => goTo(`topic-${next.id}`)}>
               <span><small>Next Topic</small><b>{next.title}</b></span> <span aria-hidden="true">→</span>
             </button>
-          ) : (
-            <button type="button" className="pn pn--next" onClick={() => goTo('team')}>
-              <span><small>You did it!</small><b>Meet the Team →</b></span>
-            </button>
-          )}
+          ) : <span className="pn pn--spacer" aria-hidden="true" />}
         </nav>
       </div>
     </section>

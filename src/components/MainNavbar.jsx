@@ -11,7 +11,6 @@ import { PhpBadge } from './Navbar.jsx'
 const LINKS = [
   { label: 'Topics', hash: '#topics' },
   { label: 'How It Works', hash: '#how-it-works' },
-  { label: 'Team', hash: '#team' },
 ]
 
 const MainNavbar = memo(function MainNavbar() {

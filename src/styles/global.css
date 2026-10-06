@@ -190,7 +190,6 @@ code, pre { font-family: var(--font-mono); }
   transition: color 0.15s ease, background 0.15s ease;
 }
 .nav__link:hover { color: var(--ink); background: var(--surface); }
-.nav__team-btn { flex-shrink: 0; }
 .nav__burger {
   display: none;
   flex-direction: column;
@@ -235,7 +234,6 @@ code, pre { font-family: var(--font-mono); }
   border-radius: 14px;
 }
 .nav__sheet-link:hover { background: var(--surface); }
-.nav__sheet-team { justify-content: center; margin-top: 6px; }
 
 /* ============================================================
    HOME — cinematic scroll-controlled animation
@@ -1439,97 +1437,6 @@ code, pre { font-family: var(--font-mono); }
 }
 
 /* ============================================================
-   TEAM
-   ============================================================ */
-
-.team { padding: 120px 0; }
-.team__head { text-align: center; }
-.team__head h2 { font-size: clamp(2rem, 4vw, 3rem); margin-top: 8px; }
-.team__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
-  margin-top: 46px;
-}
-.tcard {
-  position: relative;
-  background: #fff;
-  border: 1.5px solid var(--line);
-  border-radius: 26px;
-  padding: 28px 24px;
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-}
-.tcard--section { box-shadow: var(--shadow); }
-.tcard__spark { position: absolute; top: 16px; right: 18px; }
-.tcard__avatar {
-  width: 104px;
-  height: 104px;
-  margin: 0 auto;
-  border-radius: 50%;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-  border: 3px solid #fff;
-  box-shadow: var(--shadow-sm);
-}
-.tcard__avatar svg { width: 86%; }
-.tcard h4 { font-size: 20px; margin-top: 14px; }
-.tcard__role {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent, var(--violet));
-  background: color-mix(in srgb, var(--accent, var(--violet)) 12%, #fff);
-  border-radius: 999px;
-  padding: 4px 12px;
-  margin-top: 6px;
-}
-.tcard p { color: var(--muted); font-size: 14px; margin-top: 10px; }
-
-/* team modal */
-.tmodal {
-  position: fixed;
-  inset: 0;
-  z-index: 120;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-  background: rgba(43, 43, 58, 0.45);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-}
-.tmodal__card {
-  background: #fff;
-  border-radius: 30px;
-  padding: 30px;
-  width: min(820px, 100%);
-  max-height: 88vh;
-  overflow: auto;
-  box-shadow: var(--shadow-lg);
-}
-.tmodal__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-.tmodal__head h3 { font-size: 26px; }
-.tmodal__close {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: 1.5px solid var(--line);
-  background: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  color: var(--muted);
-  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
-}
-.tmodal__close:hover { background: var(--coral-soft); color: var(--coral-deep); transform: rotate(90deg); }
-.tmodal__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 14px; }
-.tmodal__hint { margin-top: 20px; text-align: center; font-size: 13px; color: var(--muted); }
-.tmodal__hint code { background: var(--surface); border-radius: 7px; padding: 2px 8px; font-size: 12px; }
-
-/* ============================================================
    FINALE + FOOTER
    ============================================================ */
 
@@ -1672,14 +1579,12 @@ code, pre { font-family: var(--font-mono); }
   .viva__kid { width: 90px; }
   .api__demo { grid-template-columns: 1fr; }
   .api__arrow { transform: rotate(90deg); }
-  .team__grid { grid-template-columns: 1fr 1fr 1fr; }
-  .tmodal__grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 767px) {
   .wrap { padding-inline: 18px; }
   .nav { top: 10px; padding-inline: 10px; }
-  .nav__links, .nav__team-btn { display: none; }
+  .nav__links { display: none; }
   .nav__burger { display: flex; }
   .nav__brand span { font-size: 15.5px; }
   .home-anim { height: 560vh; }
@@ -1700,7 +1605,6 @@ code, pre { font-family: var(--font-mono); }
   .topic__pn .pn small { display: none; }
   .crud { grid-template-columns: 1fr; }
   .best { grid-template-columns: 1fr; }
-  .team__grid { grid-template-columns: 1fr; }
   .pipeline__track { max-width: none; padding-inline: 6px; }
   .pipeline__spine { left: 26px; margin-left: 0; }
   .pipeline__row { grid-template-columns: 52px 1fr; margin: 30px 0; }
@@ -1715,7 +1619,6 @@ code, pre { font-family: var(--font-mono); }
   .codeblock__pre { font-size: 13.5px; padding: 16px 16px; }
   .pdo__table tbody th { width: auto; }
   .pdo__table th, .pdo__table td { padding: 11px 12px; font-size: 13.5px; }
-  .tcard__avatar { width: 92px; height: 92px; }
 }
 
 /* ============================================================

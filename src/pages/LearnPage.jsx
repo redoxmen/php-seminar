@@ -1,12 +1,10 @@
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Navbar from '../components/Navbar.jsx'
 import LearnHero from '../components/LearnHero.jsx'
 import TopicNavigator from '../components/TopicNavigator.jsx'
 import TopicSection from '../components/TopicSection.jsx'
 import Pipeline from '../components/Pipeline.jsx'
-import TeamSection from '../components/TeamSection.jsx'
-import TeamModal from '../components/TeamModal.jsx'
 import FinalSection from '../components/FinalSection.jsx'
 import Footer from '../components/Footer.jsx'
 import FloatingTopics from '../components/FloatingTopics.jsx'
@@ -14,7 +12,6 @@ import { lessons } from '../data/lessons.js'
 
 // LEARN — the full educational experience (was the old home page).
 export default function LearnPage() {
-  const [teamOpen, setTeamOpen] = useState(false)
   const location = useLocation()
 
   // support /learn#topics style deep links from the home navbar
@@ -34,7 +31,7 @@ export default function LearnPage() {
     <>
       <a className="skip-link" href="#topics">Skip to topics</a>
 
-      <Navbar onOpenTeam={() => setTeamOpen(true)} teamOpen={teamOpen} />
+      <Navbar />
 
       <main>
         <LearnHero />
@@ -48,14 +45,12 @@ export default function LearnPage() {
           </Fragment>
         ))}
 
-        <TeamSection />
         <FinalSection />
       </main>
 
       <Footer />
 
       <FloatingTopics />
-      <TeamModal open={teamOpen} onClose={() => setTeamOpen(false)} />
     </>
   )
 }

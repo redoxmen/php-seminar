@@ -23,7 +23,6 @@ export default function Footer() {
         <nav className="footer__links" aria-label="Footer">
           <button type="button" onClick={() => navigate('/')}>Home</button>
           <button type="button" onClick={() => goTo('topics')}>Topics</button>
-          <button type="button" onClick={() => goTo('team')}>Team</button>
         </nav>
       </div>
     </footer>
