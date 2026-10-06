@@ -1,0 +1,23 @@
+{
+  "name": "php-mysqli-journey",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A premium interactive cartoon learning website for PHP + MySQLi",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "framer-motion": "^11.11.17",
+    "prismjs": "^1.29.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7"
+  }
+}
