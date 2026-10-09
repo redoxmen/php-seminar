@@ -4,6 +4,7 @@ import FrameSequence from './FrameSequence.jsx'
 import AnimationProgress from './AnimationProgress.jsx'
 import StartLearningButton from './StartLearningButton.jsx'
 import { FORCE_MOTION } from '../lib/motion.js'
+import { DEVICE } from '../lib/device.js'
 
 // ============================================================
 //  HomeAnimation — the cinematic home experience.
@@ -74,7 +75,7 @@ const HomeAnimation = memo(function HomeAnimation() {
         />
 
         <div className={`home-anim__hint ${started ? 'is-hidden' : ''}`} aria-hidden="true">
-          <span>Scroll to explore</span>
+          <span>{DEVICE.touch ? 'Swipe up to explore' : 'Scroll to explore'}</span>
           <span className="home-anim__hint-arrow">↓</span>
         </div>
 

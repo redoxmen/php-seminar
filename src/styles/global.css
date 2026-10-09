@@ -246,30 +246,27 @@ code, pre { font-family: var(--font-mono); }
   position: sticky;
   top: 0;
   height: 100vh;
-  height: 100svh;
+  /* dvh tracks the mobile address bar; the canvas repaints in the same
+     tick on resize, so the height change can never flash */
+  height: 100dvh;
   overflow: hidden;
   background: #fff;
 }
 
-/* 10 stacked keyframes — opacity is driven directly from rAF */
+/* the frame timeline is painted onto this canvas from rAF */
 .frameseq {
   position: absolute;
   inset: 0;
   background: #fff;
 }
-.frameseq__frame {
+.frameseq__canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: block;
   user-select: none;
   pointer-events: none;
-}
-/* on squarish/portrait screens keep the WHOLE composition visible —
-   the frames' white studio background blends into the white page */
-@media (max-aspect-ratio: 1.45/1) {
-  .frameseq__frame { object-fit: contain; }
 }
 
 .home-anim__hint {
@@ -1586,6 +1583,9 @@ code, pre { font-family: var(--font-mono); }
   .nav { top: 10px; padding-inline: 10px; }
   .nav__links { display: none; }
   .nav__burger { display: flex; }
+  /* the progress rail would crowd a phone screen — the easing already
+     communicates position */
+  .animprogress { display: none; }
   .nav__brand span { font-size: 15.5px; }
   .home-anim { height: 560vh; }
   .home-anim__hint { bottom: 22px; }
