@@ -40,7 +40,10 @@ export const frameSrc = (i, orient = 'landscape') =>
   `${import.meta.env.BASE_URL}assets/php-frames/${orient}/frame-${String(i + 1).padStart(3, '0')}.webp`
 
 const BUDGET = (DEVICE.lite ? 110 : 300) * 1024 * 1024 // decoded-bitmap budget
-const MIN_DECODE_W = 720 // never decode narrower than this (quality floor)
+// quality floor for the decode width — when holding every frame at this
+// width would blow the budget, the engine keeps a windowed cache at this
+// width instead of shrinking the frames
+const MIN_DECODE_W = DEVICE.lite ? 960 : 1440
 const PROBE_CAP = 1920 // first probe frame decodes at most this wide
 const K = DEVICE.touch ? 20 : 13 // time-based easing rate (1/s)
 const NEIGHBOURS = 6 // frames around the playhead always prioritised
