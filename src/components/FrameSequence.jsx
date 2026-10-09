@@ -32,7 +32,7 @@ import { DEVICE } from '../lib/device.js'
 //  Old layered-<img> implementation: FrameSequence.layers-v1.jsx
 // ============================================================
 
-export const FRAME_COUNT = 300
+export const FRAME_COUNT = 80 // duration (10s) × 8 fps — regenerate with the ffmpeg commands in README if the video changes
 
 // BASE_URL is "/" locally and "/<repo-name>/" on GitHub Pages, so frame
 // URLs stay correct when the site is served from a subpath.
