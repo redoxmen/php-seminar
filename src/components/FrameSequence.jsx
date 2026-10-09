@@ -223,7 +223,6 @@ const FrameSequence = memo(function FrameSequence({
     // bar slides in and out; the backing store is resized on the resize
     // event and repainted from the last bitmap in the same event, so a
     // height change can never blank the screen.
-    let resizeQueued = false
     const fit = () => {
       const cssW = canvas.clientWidth
       const cssH = canvas.clientHeight
@@ -237,12 +236,12 @@ const FrameSequence = memo(function FrameSequence({
     }
     const onResize = () => {
       updateOrientation()
-      if (resizeQueued) return
-      resizeQueued = true
-      requestAnimationFrame(() => {
-        resizeQueued = false
-        if (fit()) drawKey = '' // backing store cleared — force repaint
-      })
+      // an opaque backing store clears to BLACK on resize — repaint from
+      // the last bitmap in this same event, before the browser paints
+      if (fit()) {
+        if (lastBm) paint(lastBm)
+        else { ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, canvas.width, canvas.height) }
+      }
     }
     window.addEventListener('resize', onResize, { passive: true })
 
